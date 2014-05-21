@@ -1,5 +1,6 @@
 ## By Abraham Aizenman
 ## This function creates a special "matrix" object that can cache its inverse.
+
 makeCacheMatrix <- function(x = matrix()) {
 	## Define an empty Matrix
 	  m <- matrix(,nrow(x),ncol(x))
@@ -52,3 +53,14 @@ cacheSolve <- function(x, ...) {
         x$setinverse (m)
 	  if(cond==0){m}
 }
+
+## Examples to Run
+##b<-matrix(runif(16, 1.0, 7.5),4,4)
+##b<-matrix(runif(2500, 1.0, 9.5),50,50)
+##b<-matrix(1:16,4,4)  -- This matrix is not Inversavle
+
+## How to Run:
+##a<-makeCacheMatrix()
+##a<-makeCacheMatrix(b)
+##a$get()  
+##cacheSolve(a)
